@@ -45,15 +45,24 @@
   height: 45px;
 }
 
-.kakao_logout{
+.kakao{
+  margin-top: 10px;
   font-weight: bold;
-  font-size: 12pt;
   background-color: #fee500;
   border-radius: 5px;
   color: #191919;
   width: 183px;
   height: 45px;
 }
+
+.logout{
+  font-size: 12pt;
+}
+
+.unlink{
+  font-size: 9pt;
+}
+
 a{
   text-decoration: none;
 }

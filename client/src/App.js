@@ -10,6 +10,10 @@ function App() {
     axios.get('http://localhost:5000/kakao/logout');
   }
 
+  const onUnlinkHandler = () =>{
+    axios.get('http://localhost:5000/kakao/unlink');
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +22,11 @@ function App() {
         </a>
 
         
-        <div className="kakao_logout" onClick={onSignOutHandler}>
+        <div className="kakao logout" onClick={onSignOutHandler}>
             <p>로그아웃</p>
+        </div>
+        <div className="kakao unlink" onClick={onUnlinkHandler}>
+            <p>내 카카오계정과 연결 끊기</p>
         </div>
       </header>
     </div>
