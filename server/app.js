@@ -4,7 +4,7 @@ const base64json = require('base64json');
 
 const PORT = 5000;
 
-const db = require('./db');
+//const db = require('./db');
 
 const axios = require('axios');
 
@@ -24,7 +24,7 @@ const key = require('./server_id');
 
 const KAKAO_REDIRECT_URL="http://localhost:5000/kakao/code"
 
-//let accessToken = "123";
+let accessToken = "123";
 let id_token = "123";
 let nickName = "df";
 let email = "";
@@ -40,7 +40,7 @@ app.get('/kakao/code',(req, res, next)=>{
         }        
     }).then((result)=>{
         console.log("로그인 되었습니다.")
-        const accessToken = result.data['access_token'];
+        accessToken = result.data['access_token'];
         axios({
             method : 'get',
             url : `${KAKAO_OAUTH_USERINFO_API_URL}`,
@@ -49,8 +49,8 @@ app.get('/kakao/code',(req, res, next)=>{
             }
             
         }).then((result)=>{
-            res.send(result.data);
-            
+
+            res.send('<script> window.location.href="http://localhost:3000/"</script>');
         })
     }).catch((err)=>{
         console.log(err);
